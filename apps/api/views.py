@@ -34,7 +34,7 @@ class FoodEditSet(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (IsAuthenticated,)
 
     def get_queryset(self):
-        queryset = FoodLog.objects.all().filter(pk=self.kwargs["pk"], owner=self.request.user)
+        queryset = FoodLog.objects.all().filter(owner=self.request.user)
         return queryset
     serializer_class = FoodLogSerializer
 

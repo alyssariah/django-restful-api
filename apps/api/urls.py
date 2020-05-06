@@ -6,7 +6,7 @@ router = DefaultRouter()
 router.register('food', FoodViewSet, basename='foodlog')
 
 custom_urlpatterns = [
-    url(r'^food/(?P<pk>\d+)$', FoodEditSet.as_view(), name='foodedit'),
+    url(r'^foodview/(?P<pk>\d+)/$', FoodEditSet.as_view(), name='foodedit'),
     url(r'^public/$', PublicFoodSet.as_view(), name='publicfood')
 ]
 

@@ -46,6 +46,7 @@ class LoginSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError(
                 'A user with that username or password was not found'
             )
+
         if not user.is_active:
             raise serializers.ValidationError(
                 'This user has been deactivated'
