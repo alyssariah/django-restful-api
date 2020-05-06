@@ -3,7 +3,7 @@ from apps.authentication.models import User
 
 # Create your models here.
 class FoodLog(models.Model):
-    date = models.DateField()
+    date = models.DateField(auto_now_add=True)
     name_of_food = models.CharField(max_length=100)
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     day_of_the_week = models.CharField(max_length=9, choices=[('Monday', 'Monday'), ('Tuesday', 'Tuesday'), ('Wednesday', 'Wednesday'), ('Thursday', 'Thursday'), ('Friday', 'Friday'), ('Saturday', 'Saturday'), ('Sunday', 'Sunday'),])
